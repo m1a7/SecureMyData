@@ -20,7 +20,6 @@
     return self;
 }
 
-
 #pragma mark - NSCoping
 
 -(instancetype) initWithCoder:(NSCoder *)aDecoder {

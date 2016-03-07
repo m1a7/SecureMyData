@@ -1,0 +1,10 @@
+PODS:
+  - ANHelperFunctions (1.0.3)
+
+DEPENDENCIES:
+  - ANHelperFunctions
+
+SPEC CHECKSUMS:
+  ANHelperFunctions: 39cbb913f8af9b52fc8921ba4051583a7bfc13ab
+
+COCOAPODS: 0.39.0

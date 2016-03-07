@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Security/Security.h>
+#import "ANHelperFunctions.h"
 
 @interface DocumentsTVC : UITableViewController
 

@@ -1,0 +1,6 @@
+framework module ANHelperFunctions {
+  umbrella header "ANHelperFunctions-umbrella.h"
+
+  export *
+  module * { export * }
+}

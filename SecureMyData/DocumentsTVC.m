@@ -29,7 +29,6 @@
     [super viewDidLoad];
    
     self.keychain = [[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
-    // [self.keychain remove:@"ArraySaveInKeyChain"];
     
     self.arrayDocuments = [NSMutableArray array];
     self.textFieldDocuments = [[UITextField alloc] initWithFrame:CGRectZero];
@@ -59,7 +58,6 @@
 #pragma mark - DelegatePassDataToFirstVC
 
 -(void)sendDataToA:(DocModel*)model {
-    NSLog(@"sendDataToA");
     
     self.arrayDocuments[self.selectedIndexPath.row] = model;
     [self saveInMemory];
@@ -75,8 +73,6 @@
                                                                  handler:^(UIAlertAction* action) {
                                                                      
                                                                      DocModel* doc = [[DocModel alloc] initWithName:self.textFieldDocuments.text];
-                                                                     //doc.arrayPhotos =  [NSMutableArray arrayWithObjects:@"ref1", @"ref2", @"ref3", nil];
-                                                                     
                                                                      [self.arrayDocuments insertObject:doc atIndex:0];
                                                                      
                                                                      // Update
@@ -133,27 +129,31 @@
 
 -(void) parseDataFromKeyChain
 {
-    NSData* data = [self.keychain find:ArraySaveInKeyChain];
-    NSArray* array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    [self.arrayDocuments removeAllObjects];
-    [self.arrayDocuments addObjectsFromArray:array];
-    [self.tableView reloadData];
+        NSData* data = [self.keychain find:ArraySaveInKeyChain];
+        NSArray* array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        [self.arrayDocuments removeAllObjects];
+        [self.arrayDocuments addObjectsFromArray:array];
+   
+        [self.tableView reloadData];
 }
 
 
 -(void) saveInMemory {
-    
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.arrayDocuments];
-    
-    if (![self.keychain find:ArraySaveInKeyChain]) {
-        NSLog(@"Не нашел! Создаем");
+
+    ANDispatchBlockToBackgroundQueue(^{
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.arrayDocuments];
         
-        if ([self.keychain insert:ArraySaveInKeyChain :data]) {
-            NSLog(@"Успешно создали!");
+        if (![self.keychain find:ArraySaveInKeyChain]) {
+            NSLog(@"Не нашел! Создаем");
+            
+            if ([self.keychain insert:ArraySaveInKeyChain :data]) {
+                NSLog(@"Успешно создали!");
+            }
+        } else {
+            [self.keychain update:ArraySaveInKeyChain :data]?  NSLog(@"Ошибка сохранения!") : NSLog(@"Нормально обновили!");
         }
-    } else {
-        [self.keychain update:ArraySaveInKeyChain :data]?  NSLog(@"Ошибка сохранения!") : NSLog(@"Нормально обновили!");
-     }
+    });
+   
 }
 
 
@@ -172,19 +172,38 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+
     self.selectedIndexPath = indexPath;
-    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     DetailViewerDocumentTVC *detailDocTVC = [[DetailViewerDocumentTVC alloc] initWithStyle:UITableViewStylePlain];
     detailDocTVC.currentDoc = [DocModel new];
     detailDocTVC.currentDoc = self.arrayDocuments[indexPath.row];
-    detailDocTVC.delegate = self;
+    detailDocTVC.delegate   = self;
+
+
     [self.navigationController pushViewController:detailDocTVC animated:YES];
 }
 
+
 #pragma mark - UITableViewDataSource
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.arrayDocuments removeObjectAtIndex:indexPath.row];
+        [self saveInMemory];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+    }
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

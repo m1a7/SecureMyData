@@ -29,8 +29,10 @@
     [super viewDidLoad];
 
     self.keychain =[[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
-    self.loginTextField.text = @"rostov888";
-    self.passwordTextField.text = @"zvezda";
+    
+    // HardCode this textField for Debug
+    // self.loginTextField.text    = @"";
+    // self.passwordTextField.text = @"";
 }
 
 

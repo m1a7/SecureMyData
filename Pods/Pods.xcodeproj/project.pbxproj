@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F3BBB078D7FC2796B470FD2E5C420F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		5DC4E8FF3CE3B80A4C66E6CD3A744BF6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		64F751DC42C21C107FB0CC6E22D4C343 /* ANDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = DAC077FA79FD34241B22FEF1E0905080 /* ANDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83FBA69AC886051F8863E2E4E25C1F97 /* ANHelperFunctions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B6349A17924618D86E478705D0232C4E /* ANHelperFunctions-dummy.m */; };
+		843E3EDEAC1279BCD5418A69F1474285 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		C806EFAD9C185C8A6C5C88EF44C81BDD /* Pods-SecureMyData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6841F19BD99C2E418EEADFFBE461667 /* Pods-SecureMyData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8A00B6A183B4B10A5716E2631409C54 /* ANHelperFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C669F52B2B43E70777B8C3C3D1B59B6 /* ANHelperFunctions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DBD04FF9FC7BF739B56159141645C2DD /* Pods-SecureMyData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E05F0FBC4797E0F9263FE40C25033F /* Pods-SecureMyData-dummy.m */; };
+		DDCACC7624ABED37497B9FE176394312 /* ANHelperFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A2321C3ADE48F76A8D0D0750D562646 /* ANHelperFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E22317EBDFC766570D1ABD069D2DA0C1 /* ANHelperFunctions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC1BF52401E36461FB8877D4D421760 /* ANHelperFunctions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C729B8FFF7871F79A45B77112800600F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 320F7F2F6153CC997BF1C2F7895D49A0;
+			remoteInfo = ANHelperFunctions;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07C2992FF0FD8221E358806FE803F912 /* ANHelperFunctions.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ANHelperFunctions.xcconfig; sourceTree = "<group>"; };
+		11D7152DFFA73A4DBAE92AAAA425EC69 /* Pods-SecureMyData-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SecureMyData-acknowledgements.plist"; sourceTree = "<group>"; };
+		15C5DB9EF007B9965AEBE15ADAE650BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C669F52B2B43E70777B8C3C3D1B59B6 /* ANHelperFunctions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ANHelperFunctions.m; path = ANHelperFunctions/ANHelperFunctions.m; sourceTree = "<group>"; };
+		3EC1BF52401E36461FB8877D4D421760 /* ANHelperFunctions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANHelperFunctions-umbrella.h"; sourceTree = "<group>"; };
+		51B2BB6280B43BB325F2A95AB8460300 /* Pods_SecureMyData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SecureMyData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		773EB6A7AC8BF5C5145CE5F3E6748B54 /* Pods-SecureMyData-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SecureMyData-frameworks.sh"; sourceTree = "<group>"; };
+		78E05F0FBC4797E0F9263FE40C25033F /* Pods-SecureMyData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SecureMyData-dummy.m"; sourceTree = "<group>"; };
+		7ACBFC5970369DC787900BDB7CA81B5F /* Pods-SecureMyData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SecureMyData.debug.xcconfig"; sourceTree = "<group>"; };
+		8A2321C3ADE48F76A8D0D0750D562646 /* ANHelperFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANHelperFunctions.h; path = ANHelperFunctions/ANHelperFunctions.h; sourceTree = "<group>"; };
+		B6349A17924618D86E478705D0232C4E /* ANHelperFunctions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ANHelperFunctions-dummy.m"; sourceTree = "<group>"; };
+		B6841F19BD99C2E418EEADFFBE461667 /* Pods-SecureMyData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SecureMyData-umbrella.h"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB2DB9C9AB7DFF5F9265BC42E87B1C53 /* Pods-SecureMyData-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SecureMyData-resources.sh"; sourceTree = "<group>"; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C6571C3767E5FFA5A9180C4369D27949 /* ANHelperFunctions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ANHelperFunctions.modulemap; sourceTree = "<group>"; };
+		C7588FEA8AD2835D02B49B2810C86D24 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C87AAAAD52A600ABB774EADB0828DECA /* Pods-SecureMyData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SecureMyData.release.xcconfig"; sourceTree = "<group>"; };
+		DAC077FA79FD34241B22FEF1E0905080 /* ANDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANDefines.h; path = ANHelperFunctions/ANDefines.h; sourceTree = "<group>"; };
+		EE668578147DEDF5F2BFD9106130C3D0 /* ANHelperFunctions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ANHelperFunctions-prefix.pch"; sourceTree = "<group>"; };
+		EED9C8ECDFBDAA37EFFE7D2A33B69FCF /* Pods-SecureMyData-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SecureMyData-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F4361B5FFB7325B81D764202ED052732 /* ANHelperFunctions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ANHelperFunctions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA76196F8ED3C8B33AF823E6D9798A26 /* Pods-SecureMyData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SecureMyData.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1801E9C9909567EAD64E794A29C70D6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				843E3EDEAC1279BCD5418A69F1474285 /* Foundation.framework in Frameworks */,
+				07F3BBB078D7FC2796B470FD2E5C420F /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC0FAA7DEB4E6A63DDA12270DE85A896 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DC4E8FF3CE3B80A4C66E6CD3A744BF6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51275D3DF721D4DBAE928A972D18B760 /* Pods-SecureMyData */ = {
+			isa = PBXGroup;
+			children = (
+				15C5DB9EF007B9965AEBE15ADAE650BE /* Info.plist */,
+				FA76196F8ED3C8B33AF823E6D9798A26 /* Pods-SecureMyData.modulemap */,
+				EED9C8ECDFBDAA37EFFE7D2A33B69FCF /* Pods-SecureMyData-acknowledgements.markdown */,
+				11D7152DFFA73A4DBAE92AAAA425EC69 /* Pods-SecureMyData-acknowledgements.plist */,
+				78E05F0FBC4797E0F9263FE40C25033F /* Pods-SecureMyData-dummy.m */,
+				773EB6A7AC8BF5C5145CE5F3E6748B54 /* Pods-SecureMyData-frameworks.sh */,
+				BB2DB9C9AB7DFF5F9265BC42E87B1C53 /* Pods-SecureMyData-resources.sh */,
+				B6841F19BD99C2E418EEADFFBE461667 /* Pods-SecureMyData-umbrella.h */,
+				7ACBFC5970369DC787900BDB7CA81B5F /* Pods-SecureMyData.debug.xcconfig */,
+				C87AAAAD52A600ABB774EADB0828DECA /* Pods-SecureMyData.release.xcconfig */,
+			);
+			name = "Pods-SecureMyData";
+			path = "Target Support Files/Pods-SecureMyData";
+			sourceTree = "<group>";
+		};
+		62C7990009318D5B7BD42BD2F34152F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4361B5FFB7325B81D764202ED052732 /* ANHelperFunctions.framework */,
+				51B2BB6280B43BB325F2A95AB8460300 /* Pods_SecureMyData.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				99DEEB1F9F357105105AAE982D55C11B /* Pods */,
+				62C7990009318D5B7BD42BD2F34152F0 /* Products */,
+				CA932388BD019D8C59D375D0C5670930 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		99DEEB1F9F357105105AAE982D55C11B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A12968D19E4C3EE19CD2540D0FC9888A /* ANHelperFunctions */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A12968D19E4C3EE19CD2540D0FC9888A /* ANHelperFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				DAC077FA79FD34241B22FEF1E0905080 /* ANDefines.h */,
+				8A2321C3ADE48F76A8D0D0750D562646 /* ANHelperFunctions.h */,
+				3C669F52B2B43E70777B8C3C3D1B59B6 /* ANHelperFunctions.m */,
+				A5A6D2E292F7FC56DA9A259929493707 /* Support Files */,
+			);
+			path = ANHelperFunctions;
+			sourceTree = "<group>";
+		};
+		A5A6D2E292F7FC56DA9A259929493707 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C6571C3767E5FFA5A9180C4369D27949 /* ANHelperFunctions.modulemap */,
+				07C2992FF0FD8221E358806FE803F912 /* ANHelperFunctions.xcconfig */,
+				B6349A17924618D86E478705D0232C4E /* ANHelperFunctions-dummy.m */,
+				EE668578147DEDF5F2BFD9106130C3D0 /* ANHelperFunctions-prefix.pch */,
+				3EC1BF52401E36461FB8877D4D421760 /* ANHelperFunctions-umbrella.h */,
+				C7588FEA8AD2835D02B49B2810C86D24 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ANHelperFunctions";
+			sourceTree = "<group>";
+		};
+		CA932388BD019D8C59D375D0C5670930 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				51275D3DF721D4DBAE928A972D18B760 /* Pods-SecureMyData */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A27DF0A6B5BD081970142BE51692CC20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C806EFAD9C185C8A6C5C88EF44C81BDD /* Pods-SecureMyData-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ECD6E3CD4C79A8C2E9850FDD364FA8FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64F751DC42C21C107FB0CC6E22D4C343 /* ANDefines.h in Headers */,
+				E22317EBDFC766570D1ABD069D2DA0C1 /* ANHelperFunctions-umbrella.h in Headers */,
+				DDCACC7624ABED37497B9FE176394312 /* ANHelperFunctions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		320F7F2F6153CC997BF1C2F7895D49A0 /* ANHelperFunctions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B65B00E82EA60B6E8162049F1AE3A807 /* Build configuration list for PBXNativeTarget "ANHelperFunctions" */;
+			buildPhases = (
+				2A474A624B768C59395F3AF80F2D2EC3 /* Sources */,
+				1801E9C9909567EAD64E794A29C70D6B /* Frameworks */,
+				ECD6E3CD4C79A8C2E9850FDD364FA8FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ANHelperFunctions;
+			productName = ANHelperFunctions;
+			productReference = F4361B5FFB7325B81D764202ED052732 /* ANHelperFunctions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F9F3D14E7CF36BFA8A948CEC8852AFED /* Pods-SecureMyData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4C8C6F22ECBC90F19D04B045D81674F /* Build configuration list for PBXNativeTarget "Pods-SecureMyData" */;
+			buildPhases = (
+				59A1FC7BCCFA30745AC7E95294C80F15 /* Sources */,
+				FC0FAA7DEB4E6A63DDA12270DE85A896 /* Frameworks */,
+				A27DF0A6B5BD081970142BE51692CC20 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2AF88ADC7B1D9074D3BFF32CCEFC325 /* PBXTargetDependency */,
+			);
+			name = "Pods-SecureMyData";
+			productName = "Pods-SecureMyData";
+			productReference = 51B2BB6280B43BB325F2A95AB8460300 /* Pods_SecureMyData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 62C7990009318D5B7BD42BD2F34152F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				320F7F2F6153CC997BF1C2F7895D49A0 /* ANHelperFunctions */,
+				F9F3D14E7CF36BFA8A948CEC8852AFED /* Pods-SecureMyData */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A474A624B768C59395F3AF80F2D2EC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FBA69AC886051F8863E2E4E25C1F97 /* ANHelperFunctions-dummy.m in Sources */,
+				C8A00B6A183B4B10A5716E2631409C54 /* ANHelperFunctions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59A1FC7BCCFA30745AC7E95294C80F15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBD04FF9FC7BF739B56159141645C2DD /* Pods-SecureMyData-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2AF88ADC7B1D9074D3BFF32CCEFC325 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ANHelperFunctions;
+			target = 320F7F2F6153CC997BF1C2F7895D49A0 /* ANHelperFunctions */;
+			targetProxy = C729B8FFF7871F79A45B77112800600F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		17BAD91BFA6C27A78B01FDC9E0AE8B10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C87AAAAD52A600ABB774EADB0828DECA /* Pods-SecureMyData.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SecureMyData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SecureMyData/Pods-SecureMyData.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SecureMyData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C2176B5C5F7FA35CD4762476BFCA482A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07C2992FF0FD8221E358806FE803F912 /* ANHelperFunctions.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ANHelperFunctions/ANHelperFunctions-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ANHelperFunctions/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ANHelperFunctions/ANHelperFunctions.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ANHelperFunctions;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD014F3838A38E4C0D8E450D8A465F66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07C2992FF0FD8221E358806FE803F912 /* ANHelperFunctions.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ANHelperFunctions/ANHelperFunctions-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ANHelperFunctions/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ANHelperFunctions/ANHelperFunctions.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ANHelperFunctions;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E85EEEABEC960A65EC16AA555B902D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7ACBFC5970369DC787900BDB7CA81B5F /* Pods-SecureMyData.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SecureMyData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SecureMyData/Pods-SecureMyData.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_SecureMyData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B65B00E82EA60B6E8162049F1AE3A807 /* Build configuration list for PBXNativeTarget "ANHelperFunctions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD014F3838A38E4C0D8E450D8A465F66 /* Debug */,
+				C2176B5C5F7FA35CD4762476BFCA482A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4C8C6F22ECBC90F19D04B045D81674F /* Build configuration list for PBXNativeTarget "Pods-SecureMyData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85EEEABEC960A65EC16AA555B902D80 /* Debug */,
+				17BAD91BFA6C27A78B01FDC9E0AE8B10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

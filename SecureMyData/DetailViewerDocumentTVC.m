@@ -13,6 +13,10 @@
 #define ArraySaveInKeyChain @"ArraySaveInKeyChain"
 #define SERVICE_NAME @"ANY_NAME_FOR_YOU"
 
+typedef enum {
+    OpenLibrary,
+    OpenCamera
+} ActionOpenImagePicker;
 
 @interface DetailViewerDocumentTVC ()
 
@@ -21,10 +25,18 @@
 
 @implementation DetailViewerDocumentTVC
 
+-(void) loadView {
+    [super loadView];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.keychain = [[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
+    self.navigationItem.title = @"Secret`s Doc";
+    
     UIBarButtonItem *addPhoto = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewPhoto:)];
     self.navigationItem.rightBarButtonItem = addPhoto;
 }
@@ -37,63 +49,62 @@
 }
 
 
-
-
 #pragma mark - Action
 
 -(void) addNewPhoto:(UIBarButtonItem*) sender {
     
-    /*
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:
+                                @"Add Photo" message:@"Select action" preferredStyle:UIAlertControllerStyleActionSheet];
+  
+    UIAlertAction* actionDel = [UIAlertAction actionWithTitle:@"From Library" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+                                                          [self openCamera:OpenLibrary];
+                                                      }];
     
-#if TARGET_OS_SIMULATOR
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]){
-        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-#else
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-#endif
+    UIAlertAction* actionAdd = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+                                                          [self openCamera:OpenCamera];
+                                                      }];
+   
+    UIAlertAction* actionCancel = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleCancel
+                                                         handler:nil];
+    [alert addAction:actionDel];
+    [alert addAction:actionAdd];
+    [alert addAction:actionCancel];
     
-    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-    imagePicker.allowsEditing = YES;
-    imagePicker.delegate = self;
-    
-    [self presentViewController:imagePicker animated:YES completion:nil];
-    */
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        UIImagePickerController *imagePickerCamera =[[UIImagePickerController alloc] init];
-        imagePickerCamera.delegate = self;
-        imagePickerCamera.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
-        imagePickerCamera.allowsEditing = YES;
-        imagePickerCamera.sourceType = UIImagePickerControllerSourceTypeCamera;
-        
-        [self presentViewController:imagePickerCamera  animated:YES completion:nil];
-    }
-    
-    else if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum])
-    {
-        UIImagePickerController *imagePickerAlbum =[[UIImagePickerController alloc] init];
-        imagePickerAlbum.delegate = self;
-        imagePickerAlbum.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
-        imagePickerAlbum.allowsEditing = YES;
-        imagePickerAlbum.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        
-        [self presentViewController:imagePickerAlbum animated:YES completion:nil];
-    }
-    
+    [self presentViewController:alert animated:YES completion:nil];
 }
+
+#pragma marl - Open UIImagePickerController
+
+-(void) openCamera:(ActionOpenImagePicker) action {
+    
+    UIImagePickerController *imagePicker =[[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
+    imagePicker.allowsEditing = YES;
+
+    
+    if (action == OpenLibrary){
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+    } else if (action == OpenCamera){
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+    }
+    
+    [self presentViewController:imagePicker  animated:YES completion:nil];
+}
+
 
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-   
 
-    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+
     if (!self.currentDoc.arrayPhotos){
         self.currentDoc.arrayPhotos = [NSMutableArray array];
     }
@@ -107,29 +118,32 @@
     
 }
 
-
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //return 60.f;
     
     if ([self.currentDoc.arrayPhotos[indexPath.row] isKindOfClass:[UIImage class]]) {
-        
-        UIImage* img = self.currentDoc.arrayPhotos[indexPath.row];
-        UIImageView* imgView = [[UIImageView alloc] initWithImage:img];
-        NSLog(@"%f",CGRectGetWidth(imgView.bounds));
-        
-        //return CGRectGetWidth(imgView.bounds);
-        return 250.f;
+         return 250.f;
     }
-    
-    
     return 50.f;
 }
 
 
 #pragma mark - UITableViewDataSource
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.currentDoc.arrayPhotos removeObjectAtIndex:indexPath.row];        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+    }
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -141,37 +155,8 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
     
-//    static NSString *CellIdentifier = @"CellDetail";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
-//    
-//    cell.textLabel.text = @"s";
-//    
-//    return cell;
-    
-//////////////////
-    
-//    static NSString *CellIdentifier = @"CellDetail";
-//
-//    UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    
-//    
-//        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CellDetail" owner:self options:nil];
-//        cell = [topLevelObjects objectAtIndex:0];
-//
-//    }
-//    cell.textLabel.text = @"s";
-//    return cell;
-
     static NSString *simpleTableIdentifier = @"CellDetailPhoto";
-    
     CellDetail *cell = (CellDetail *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (!cell) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CellDetailPhoto" owner:self options:nil];
@@ -179,7 +164,6 @@
     }
     
     if ([self.currentDoc.arrayPhotos[indexPath.row] isKindOfClass:[UIImage class]]) {
-        
         UIImage* img = self.currentDoc.arrayPhotos[indexPath.row];
         cell.imgView.image = img;
     }

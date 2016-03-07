@@ -10,6 +10,7 @@
 #import <Security/Security.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 
+#import "ANHelperFunctions.h"
 #import "Keychain.h"
 #import "DocModel.h"
 
