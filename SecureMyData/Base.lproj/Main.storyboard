@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ocean Wave Close Up iPhone 6 Plus HD Wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="WFE-fe-r6N">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter login &amp; password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64y-aS-lgg">
+                                <rect key="frame" x="20" y="51" width="560" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Jir-pg-thA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8LY-lk-Dcv">
+                                <rect key="frame" x="20" y="132" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="5DM-Bt-Yqi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eTP-fX-cCK">
+                                <rect key="frame" x="20" y="188" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gHk-vF-9cn"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki5-B7-ecJ">
+                                <rect key="frame" x="230" y="250" width="140" height="66"/>
+                                <color key="backgroundColor" red="0.4216468334197998" green="0.8741225004196167" blue="0.51677578687667847" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="5Sa-vm-ffM"/>
+                                    <constraint firstAttribute="width" constant="140" id="vI1-UG-vg1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.022383993491530418" green="0.034249771386384964" blue="0.03124246746301651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goRegisterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oM0-rE-aDU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WFE-fe-r6N" secondAttribute="trailing" id="1yN-As-rIL"/>
+                            <constraint firstItem="eTP-fX-cCK" firstAttribute="top" secondItem="8LY-lk-Dcv" secondAttribute="bottom" constant="26" id="2X9-jc-vaD"/>
+                            <constraint firstItem="WFE-fe-r6N" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4vH-oI-WU1"/>
+                            <constraint firstAttribute="trailing" secondItem="8LY-lk-Dcv" secondAttribute="trailing" constant="20" id="5Cf-WS-Wto"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WFE-fe-r6N" secondAttribute="bottom" id="5Md-1C-oK8"/>
+                            <constraint firstItem="WFE-fe-r6N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5vv-sa-LyJ"/>
+                            <constraint firstItem="8LY-lk-Dcv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="BlI-2d-lFP"/>
+                            <constraint firstItem="Ki5-B7-ecJ" firstAttribute="top" secondItem="eTP-fX-cCK" secondAttribute="bottom" constant="32" id="Lcw-9P-k7g"/>
+                            <constraint firstItem="64y-aS-lgg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="31" id="S8A-am-rmZ"/>
+                            <constraint firstItem="eTP-fX-cCK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="aD5-Gk-hfw"/>
+                            <constraint firstItem="8LY-lk-Dcv" firstAttribute="top" secondItem="64y-aS-lgg" secondAttribute="bottom" constant="18" id="jbN-2n-Ung"/>
+                            <constraint firstAttribute="trailing" secondItem="64y-aS-lgg" secondAttribute="trailing" constant="20" id="kJ6-s8-SvZ"/>
+                            <constraint firstItem="Ki5-B7-ecJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lGw-td-mxB"/>
+                            <constraint firstItem="64y-aS-lgg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="pMP-AC-mR9"/>
+                            <constraint firstAttribute="trailing" secondItem="eTP-fX-cCK" secondAttribute="trailing" constant="20" id="vaD-Nc-fTE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="8LY-lk-Dcv" id="abm-mS-PeB"/>
+                        <outlet property="passwordTextField" destination="eTP-fX-cCK" id="qfk-Kx-UCS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="522" y="490"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Ocean Wave Close Up iPhone 6 Plus HD Wallpaper" width="1080" height="1917"/>
+    </resources>
 </document>

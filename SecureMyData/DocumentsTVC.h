@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DocumentsTVC.h
 //  SecureMyData
 //
 //  Created by MD on 27.02.16.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Security/Security.h>
 
-@interface ViewController : UIViewController
-
+@interface DocumentsTVC : UITableViewController
 
 @end
-
