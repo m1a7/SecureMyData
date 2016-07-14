@@ -13,7 +13,6 @@
 
 #define SERVICE_NAME @"ANY_NAME_FOR_YOU"
 
-
 @interface LoginVC () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *loginTextField;
@@ -22,19 +21,16 @@
 
 @end
 
-
 @implementation LoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.keychain =[[Keychain alloc] initWithService:SERVICE_NAME withGroup:nil];
-    
     // HardCode this textField for Debug
     // self.loginTextField.text    = @"";
     // self.passwordTextField.text = @"";
 }
-
 
 #pragma mark - UITextFieldDelegate
 
@@ -42,7 +38,6 @@
     [textField resignFirstResponder];
     return NO;
 }
-
 
 #pragma mark - Action
 
@@ -99,7 +94,6 @@
     
     [self showMessage:@"Create new account ?" andTitle:@"Stop" withButtons:@[createAccountButton,cancle]];
 }
-
 
 -(BOOL) checkPasswordWithLogin:(NSString*) login withPass:(NSString*) password  {
     
